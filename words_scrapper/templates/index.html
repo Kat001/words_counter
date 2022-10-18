@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+{% block content%}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">This system will count the words in a page</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">You can enter any url that exists on the internet.</h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start" style="margin-top: 20px;">
+                <form form action="/" method="post"class="form-inline">
+                  
+                  <div class="form-group mx-sm-3 mb-1">
+                    <input type="url" class="form-control" id="url" name="page_url" placeholder="Enter your url">
+                  </div>
+                  <button type="submit" class="btn btn-primary mb-1" style="margin-top: 20px; float: right; margin-right: 18px; background-color: #012970; border-radius: 20px;">Submit Url</button>
+                </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="{{ url_for('static', filename='assets/img/hero-img.png') }}" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section>
+{% endblock content%}

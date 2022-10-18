@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content%}
+<table class="table table-striped" style="margin-top:100px;margin-bottom:100px; margin-left:100px;margin-right:100px;">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Url</th>
+            <th scope="col">Total Words</th>
+            <th scope="col">Detail</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for result in results %}
+        <tr>
+            <th scope="row">1</th>
+            <td>{{result.url}}</td>
+            <td>{{result.total_words}}</td>
+            <!-- <td>{{result.json_record}}</td> -->
+            <td><a href="/result/{{result.id}}" target="_blank" class="btn btn-primary">
+            Detail
+          </a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content%}

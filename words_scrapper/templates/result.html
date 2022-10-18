@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block content%}
+<div class="container">
+    <section class="mx-auto my-5">
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold">Detail Of:</h5>
+                <p class="card-text">{{ result.url }}</p>
+                <div class="d-flex justify-content-between">
+                    <p class="display-1">{{result.total_words}} words</p>
+                    <i class="fas fa-sun-o fa-5x pt-3 text-warning"></i>
+                </div>
+
+                <div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Word</th>
+                                <th scope="col">Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for word,count in result.json_record.items() %}
+                            <tr>
+                                <th scope="row">{{loop.counter}}</th>
+                                <td>{{ word }}</td>
+                                <td>{{ count }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <hr />
+            </div>
+        </div>
+    </section>
+</div> {% endblock content%}
